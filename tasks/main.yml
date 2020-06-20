@@ -4,9 +4,7 @@
   shell: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
 
 - name: "install docker-ce"
-  package:
-    name: "docker-ce"
-    state: "latest"
+  shell: "dnf install docker-ce --nobest -y"
 
 - name: "start&enable docker daemon"
   systemd:
