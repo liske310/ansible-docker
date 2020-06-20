@@ -1,0 +1,15 @@
+---
+
+- name: "add docker repository"
+  shell: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
+
+- name: "install docker-ce"
+  package:
+    name: "docker-ce"
+    state: "latest"
+
+- name: "start&enable docker daemon"
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
