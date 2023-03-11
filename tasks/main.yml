@@ -1,13 +1,5 @@
 ---
-
-- name: "add docker repository"
-  shell: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
-
-- name: "install docker-ce"
-  shell: "dnf install docker-ce --nobest -y"
-
-- name: "start&enable docker daemon"
-  systemd:
-    name: docker
-    state: started
-    enabled: yes
+- name: "Centos"
+  when: ansible_distribution == "Centos"
+  include_tasks: centos.yml
+  tags: [centos, docker-centos]
