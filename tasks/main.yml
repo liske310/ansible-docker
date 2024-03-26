@@ -1,5 +1,5 @@
 ---
 - name: "Centos"
-  when: ansible_distribution == "Centos"
+  when: ansible_facts['os_family'] == "RedHat"
   include_tasks: centos.yml
   tags: [centos, docker-centos]
