@@ -1,5 +1,5 @@
 ---
-- name: "Centos"
+- name: "Redhat"
   when: ansible_facts['os_family'] == "RedHat"
   include_tasks: redhat.yml
   tags: [centos, docker-centos]
